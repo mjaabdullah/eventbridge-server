@@ -130,6 +130,8 @@ const run = async (): Promise<void> => {
             currentPage: page,
             totalPages: Math.ceil(total / limit),
             limit,
+            hasNextPage: page < Math.ceil(total / limit),
+            hasPrevPage: page > 1,
           },
         });
       } catch (error) {
